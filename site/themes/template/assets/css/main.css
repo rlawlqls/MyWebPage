@@ -1080,6 +1080,63 @@ a.hero-social-link:hover {
   margin-bottom: 1.25rem;
   color: hsl(var(--muted-foreground));
 }
+.detail-content > p > a,
+.detail-content > ul a {
+  color: hsl(var(--primary));
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.detail-content > p > a:hover,
+.detail-content > ul a:hover {
+  text-decoration-thickness: 2px;
+}
+.detail-content img {
+  width: 100%;
+  max-height: 42rem;
+  object-fit: cover;
+  margin: 2rem 0 0.75rem;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px -24px rgba(0,0,0,0.4);
+}
+.hobby-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.hobby-link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 1rem;
+  background-color: hsl(var(--card));
+  color: hsl(var(--foreground));
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.hobby-link-card:hover {
+  transform: translateY(-3px);
+  border-color: hsl(var(--primary) / 0.35);
+  box-shadow: 0 16px 30px -24px rgba(0,0,0,0.45);
+}
+.hobby-link-card strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+.hobby-link-card > span:last-child {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.hobby-link-label {
+  color: hsl(var(--primary));
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
 
 @media (max-width: 639px) {
   .detail-hero {
@@ -1102,6 +1159,9 @@ a.hero-social-link:hover {
   }
   .page-navigation .btn {
     width: 100%;
+  }
+  .hobby-links {
+    grid-template-columns: 1fr;
   }
 }
 

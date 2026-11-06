@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Jane Doe — Software Engineer on 김지빈 — AI 개발자</title>
+		<link>http://localhost:1313/MyWebPage/</link>
+		<description>Recent content in Jane Doe — Software Engineer on 김지빈 — AI 개발자</description>
+		<generator>Hugo</generator>
+		<language>ko-kr</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/MyWebPage/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>About</title>
+				<link>http://localhost:1313/MyWebPage/about/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/MyWebPage/about/</guid>
+				<description>&lt;p&gt;Hi, I&amp;rsquo;m Jane. This page will introduce my background, interests, and the work I care about.&lt;/p&gt;&#xA;&lt;p&gt;Replace this text with a short introduction about yourself, what you do, and what you care about.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Contact</title>
+				<link>http://localhost:1313/MyWebPage/contact/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/MyWebPage/contact/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Education</title>
+				<link>http://localhost:1313/MyWebPage/education/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/MyWebPage/education/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Goals</title>
+				<link>http://localhost:1313/MyWebPage/goals/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/MyWebPage/goals/</guid>
+				<description>&lt;p&gt;Use this page to explain the direction you want your work and learning to take.&lt;/p&gt;&#xA;&lt;h2 id=&#34;near-term-goals&#34;&gt;Near-term goals&lt;/h2&gt;&#xA;&lt;p&gt;Describe the skills you want to strengthen and the projects you want to complete next.&lt;/p&gt;&#xA;&lt;h2 id=&#34;long-term-goals&#34;&gt;Long-term goals&lt;/h2&gt;&#xA;&lt;p&gt;Describe the kind of work, impact, or professional growth you want to pursue over time.&lt;/p&gt;&#xA;&lt;h2 id=&#34;how-i-plan-to-grow&#34;&gt;How I plan to grow&lt;/h2&gt;&#xA;&lt;p&gt;Explain the habits, learning activities, or experiences that will help you reach those goals.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Projects</title>
+				<link>http://localhost:1313/MyWebPage/projects/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/MyWebPage/projects/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Skills</title>
+				<link>http://localhost:1313/MyWebPage/skills/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/MyWebPage/skills/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

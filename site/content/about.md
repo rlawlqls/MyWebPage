@@ -1,8 +1,23 @@
 ---
-title: "About"
-description: "Learn more about my background, interests, and the work I care about."
+title: "소개"
+description: "전북대학교 컴퓨터인공지능학부 김지빈의 관심 분야와 취미, 성장 방향을 소개합니다."
 ---
 
-Hi, I'm Jane. This page will introduce my background, interests, and the work I care about.
+안녕하세요. 전북대학교 컴퓨터인공지능학부에 재학 중인 김지빈입니다.
 
-Replace this text with a short introduction about yourself, what you do, and what you care about.
+인공지능을 통해 실제 문제를 발견하고 해결하는 과정에 흥미를 느껴 인공지능을 공부하고 있습니다. 인공지능으로 새로운 가치를 만들어 금융 서비스와 로봇 등 다양한 분야의 문제를 해결하고 싶습니다.
+
+계속해서 성장하기 위해 새로운 일에 꾸준히 도전하고 있습니다. 다양한 프로젝트를 수행하며 인공지능과 소프트웨어 개발 역량을 키우고, 실제 사용자에게 도움이 되는 개발자로 성장하는 것이 목표입니다.
+
+## 흥미와 관심 분야
+
+- 알고리즘
+- 인공지능
+- 로보틱스
+- 빅데이터
+
+## 취미 이야기
+
+공부와 프로젝트 외의 시간에는 배드민턴을 즐기고 여행을 통해 새로운 장소와 풍경을 만납니다. 아래 페이지에서 두 취미에 관한 이야기를 더 자세히 볼 수 있습니다.
+
+{{< hobby-links >}}
