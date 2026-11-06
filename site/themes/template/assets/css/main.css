@@ -940,14 +940,15 @@ button {
 .hero-social-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.625rem 0.875rem;
+  justify-content: center;
+  width: 2.875rem;
+  height: 2.875rem;
+  padding: 0;
   border: 1px solid hsl(var(--border));
   border-radius: 9999px;
   background-color: hsl(var(--background) / 0.78);
   color: hsl(var(--muted-foreground));
-  font-size: 0.8125rem;
-  font-weight: 600;
+  flex-shrink: 0;
   transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 a.hero-social-link:hover {
