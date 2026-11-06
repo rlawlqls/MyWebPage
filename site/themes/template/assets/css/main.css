@@ -747,6 +747,10 @@ button {
 .nav-link:hover {
   color: hsl(var(--primary));
 }
+.nav-link[aria-current="page"] {
+  color: hsl(var(--primary));
+  font-weight: 700;
+}
 
 /* Mobile menu */
 .mobile-menu {
@@ -783,6 +787,11 @@ button {
 .mobile-nav-link:hover {
   color: hsl(var(--primary));
   background-color: hsl(var(--muted) / 0.6);
+}
+.mobile-nav-link[aria-current="page"] {
+  color: hsl(var(--primary));
+  background-color: hsl(var(--muted) / 0.6);
+  font-weight: 700;
 }
 
 /* Mobile backdrop */

@@ -3,8 +3,10 @@
     <p class="text-sm" style="opacity: 0.6;">
       &copy; {{ now.Year }} {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}. All rights reserved.
     </p>
-    <a href="#top" class="text-sm transition-colors" style="opacity: 0.8;" data-scroll="top">
-      Back to Top
-    </a>
+    {{- if .IsHome }}
+      <a href="#top" class="text-sm transition-colors" style="opacity: 0.8;">Back to Top</a>
+    {{- else }}
+      <a href="{{ .Site.Home.RelPermalink }}" class="text-sm transition-colors" style="opacity: 0.8;">Back to Home</a>
+    {{- end }}
   </div>
 </footer>

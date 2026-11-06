@@ -5,7 +5,6 @@
   var mobileMenu = document.getElementById('mobile-menu');
   var mobileBackdrop = document.getElementById('mobile-backdrop');
   var timelineLine = document.getElementById('timeline-line');
-  var NAV_HEIGHT = 80;
 
   // Show correct nav elements based on viewport
   function updateNavVisibility() {
@@ -54,34 +53,12 @@
     document.body.style.overflow = '';
   }
 
-  // Smooth scroll to section
-  function scrollToSection(id) {
-    if (id === 'top') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-    var el = document.getElementById(id);
-    if (!el) return;
-    var top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
-    window.scrollTo({ top: top, behavior: 'smooth' });
-  }
-
   // Event listeners
   window.addEventListener('scroll', handleScroll, { passive: true });
   window.addEventListener('resize', updateNavVisibility);
 
   if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleMobileMenu);
   if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
-
-  // All scroll buttons/links
-  document.querySelectorAll('[data-scroll]').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
-      var target = el.getAttribute('data-scroll');
-      closeMobileMenu();
-      setTimeout(function () { scrollToSection(target); }, 10);
-    });
-  });
 
   // Initialize
   updateNavVisibility();
