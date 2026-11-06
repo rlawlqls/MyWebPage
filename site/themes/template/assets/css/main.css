@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap');
 
 /* === CSS Custom Properties (matching original React theme) === */
 :root {
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif;
+  --font-display: 'Gowun Batang', 'Noto Serif KR', serif;
 
   --background: 0 0% 99%;
   --foreground: 224 71% 4%;
@@ -64,7 +64,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
   color: hsl(var(--foreground));
   line-height: 1.2;
 }

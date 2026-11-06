@@ -1,13 +1,13 @@
 baseURL = 'https://example.org/'
 languageCode = 'ko-kr'
-title = '김지빈 — 인공지능 엔지니어'
+title = '김지빈 — AI 개발자'
 
 
 [params]
   navName = "rlawlqls"
   firstName = "김지빈"
   lastName = ""
-  tagline = "인공지능 엔지니어"
+  tagline = "AI 개발자"
   email = "jibean77@jbnu.ac.kr"
   github = "https://github.com/rlawlqls"
   linkedin = "https://www.jbnu.ac.kr/web/index.do"
@@ -20,7 +20,7 @@ title = '김지빈 — 인공지능 엔지니어'
   favicon = "/favicon.svg"
   ogImage = "/opengraph.jpg"
   resumeFile = ""
-  description = "인공지능 엔지니어 김지빈의 포트폴리오입니다."
+  description = "AI 개발자 김지빈의 포트폴리오입니다."
 
 disableKinds = ['taxonomy', 'term']
 
