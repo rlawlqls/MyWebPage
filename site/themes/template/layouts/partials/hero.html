@@ -20,11 +20,26 @@
           <span class="text-primary" style="font-size: clamp(2.5rem, 5.5vw, 4.375rem);">{{ .Site.Params.firstName }}</span>
         </h1>
 
-        <p class="text-muted" style="font-size: clamp(1.125rem, 2vw, 1.375rem); font-weight: 300; margin-bottom: 2rem; max-width: 42rem; margin-left: auto; margin-right: auto;">
+        <p class="text-muted" style="font-size: clamp(1.125rem, 2vw, 1.375rem); font-weight: 300; margin-bottom: 1.25rem; max-width: 42rem; margin-left: auto; margin-right: auto;">
           {{ .Site.Params.tagline }}
         </p>
 
-        <div class="flex flex-col gap-4 items-center" style="flex-wrap: wrap;">
+        {{- with .Site.Params.affiliation }}
+          <p class="hero-affiliation">
+            <span class="hero-affiliation-dot" aria-hidden="true"></span>
+            {{ . }}
+          </p>
+        {{- end }}
+
+        {{- with .Site.Params.interests }}
+          <ul class="hero-interests" aria-label="관심 분야">
+            {{- range . }}
+              <li class="hero-interest-tag">#{{ . }}</li>
+            {{- end }}
+          </ul>
+        {{- end }}
+
+        <div class="hero-actions flex flex-col gap-4 items-center" style="flex-wrap: wrap;">
           <div class="flex gap-4 items-center" style="flex-wrap: wrap; justify-content: center;">
             <a href="{{ "projects/" | relURL }}" class="btn btn-primary btn-lg">
               프로젝트 보기
