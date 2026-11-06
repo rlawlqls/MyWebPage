@@ -9,7 +9,7 @@
           {{ .Title }}
         </h1>
         {{ with .Description }}
-          <p class="text-muted" style="max-width: 42rem; margin: 0 auto; font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.7;">
+          <p class="text-muted{{ if .Params.hero_description_nowrap }} detail-hero-description-nowrap{{ end }}" style="max-width: 42rem; margin: 0 auto; font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.7;">
             {{ . }}
           </p>
         {{ end }}

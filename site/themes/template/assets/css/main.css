@@ -1100,6 +1100,52 @@ a.hero-social-link:hover {
   border-radius: 1rem;
   box-shadow: 0 20px 40px -24px rgba(0,0,0,0.4);
 }
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.interest-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 10.5rem;
+  padding: 1.5rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 1rem;
+  background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted) / 0.45));
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.interest-card:hover {
+  transform: translateY(-3px);
+  border-color: hsl(var(--primary) / 0.35);
+  box-shadow: 0 16px 30px -24px rgba(0,0,0,0.45);
+}
+.interest-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 3rem;
+  border-radius: 0.9rem;
+  background-color: hsl(var(--primary) / 0.08);
+  color: hsl(var(--primary));
+}
+.interest-icon svg {
+  width: 1.65rem;
+  height: 1.65rem;
+}
+.detail-content .interest-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+.detail-content .interest-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
 .hobby-links {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1162,6 +1208,19 @@ a.hero-social-link:hover {
   }
   .hobby-links {
     grid-template-columns: 1fr;
+  }
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+  .interest-card {
+    min-height: auto;
+  }
+}
+
+@media (min-width: 640px) {
+  .detail-hero-description-nowrap {
+    max-width: none !important;
+    white-space: nowrap;
   }
 }
 
