@@ -1,6 +1,6 @@
 {{ define "main" }}
-  <article id="top">
-    <header class="section bg-muted-30" style="padding-top: 9rem; padding-bottom: 4rem; border-bottom: 1px solid hsl(var(--border) / 0.4);">
+  <article id="top" class="detail-page">
+    <header class="detail-hero section bg-muted-30" style="padding-top: 9rem; padding-bottom: 4rem; border-bottom: 1px solid hsl(var(--border) / 0.4);">
       <div class="container" style="max-width: 64rem; text-align: center;">
         <p class="text-primary font-bold mb-4" style="letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem;">
           Portfolio
@@ -20,13 +20,13 @@
       {{- partial (printf "%s.html" .) $ -}}
     {{- else }}
       <section class="section" style="padding-top: 4rem; padding-bottom: 4rem;">
-        <div class="container" style="max-width: 52rem; font-size: 1.0625rem; line-height: 1.8;">
+        <div class="detail-content container" style="max-width: 52rem; font-size: 1.0625rem; line-height: 1.8;">
           {{ $.Content }}
         </div>
       </section>
     {{- end }}
 
-    <section aria-label="Page navigation" style="padding: 2rem 0 4rem; background-color: hsl(var(--background));">
+    <section class="page-navigation" aria-label="Page navigation" style="padding: 2rem 0 4rem; background-color: hsl(var(--background));">
       <div class="container" style="max-width: 52rem; padding-top: 2rem; border-top: 1px solid hsl(var(--border) / 0.6);">
         <a href="{{ .Site.Home.RelPermalink }}" class="btn btn-outline">
           <span aria-hidden="true">&larr;</span>

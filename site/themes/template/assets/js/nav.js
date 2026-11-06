@@ -1,23 +1,16 @@
 (function () {
   var navbar = document.getElementById('navbar');
-  var desktopNav = document.getElementById('desktop-nav');
   var hamburgerBtn = document.getElementById('hamburger-btn');
   var mobileMenu = document.getElementById('mobile-menu');
   var mobileBackdrop = document.getElementById('mobile-backdrop');
-  var timelineLine = document.getElementById('timeline-line');
+  var DESKTOP_MIN_WIDTH = 1024;
 
-  // Show correct nav elements based on viewport
   function updateNavVisibility() {
-    var isDesktop = window.innerWidth >= 768;
-    if (desktopNav) desktopNav.style.display = isDesktop ? 'flex' : 'none';
-    if (hamburgerBtn) hamburgerBtn.style.display = isDesktop ? 'none' : 'block';
-    if (timelineLine) timelineLine.style.display = isDesktop ? 'block' : 'none';
-    if (!isDesktop) return;
-    closeMobileMenu();
+    if (window.innerWidth >= DESKTOP_MIN_WIDTH) closeMobileMenu(false);
   }
 
-  // Scroll detection for navbar background
   function handleScroll() {
+    if (!navbar) return;
     if (window.scrollY > 20) {
       navbar.classList.add('scrolled');
     } else {
@@ -25,42 +18,80 @@
     }
   }
 
-  // Mobile menu toggle
   function toggleMobileMenu() {
+    if (!mobileMenu) return;
     var isOpen = mobileMenu.classList.contains('open');
     if (isOpen) {
-      closeMobileMenu();
+      closeMobileMenu(false);
     } else {
       openMobileMenu();
     }
   }
 
   function openMobileMenu() {
+    if (!mobileMenu || !mobileBackdrop || !hamburgerBtn) return;
     mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
     mobileBackdrop.classList.add('open');
     hamburgerBtn.setAttribute('aria-expanded', 'true');
+    hamburgerBtn.setAttribute('aria-label', 'Close menu');
     hamburgerBtn.querySelector('svg:first-child').style.display = 'none';
     hamburgerBtn.querySelector('svg:last-child').style.display = 'block';
     document.body.style.overflow = 'hidden';
+
+    var firstLink = mobileMenu.querySelector('a');
+    if (firstLink) window.requestAnimationFrame(function () { firstLink.focus(); });
   }
 
-  function closeMobileMenu() {
+  function closeMobileMenu(returnFocus) {
+    if (!mobileMenu || !mobileBackdrop || !hamburgerBtn) return;
     mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
     mobileBackdrop.classList.remove('open');
     hamburgerBtn.setAttribute('aria-expanded', 'false');
+    hamburgerBtn.setAttribute('aria-label', 'Open menu');
     hamburgerBtn.querySelector('svg:first-child').style.display = 'block';
     hamburgerBtn.querySelector('svg:last-child').style.display = 'none';
     document.body.style.overflow = '';
+    if (returnFocus) hamburgerBtn.focus();
   }
 
-  // Event listeners
   window.addEventListener('scroll', handleScroll, { passive: true });
   window.addEventListener('resize', updateNavVisibility);
 
   if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleMobileMenu);
-  if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
+  if (mobileBackdrop) {
+    mobileBackdrop.addEventListener('click', function () { closeMobileMenu(true); });
+  }
+  if (mobileMenu) {
+    mobileMenu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () { closeMobileMenu(false); });
+    });
+  }
+  document.addEventListener('keydown', function (event) {
+    if (!mobileMenu || !mobileMenu.classList.contains('open')) return;
 
-  // Initialize
+    if (event.key === 'Escape') {
+      closeMobileMenu(true);
+      return;
+    }
+
+    if (event.key === 'Tab') {
+      var links = mobileMenu.querySelectorAll('a[href]');
+      if (!links.length) return;
+      var firstLink = links[0];
+      var lastLink = links[links.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstLink) {
+        event.preventDefault();
+        lastLink.focus();
+      } else if (!event.shiftKey && document.activeElement === lastLink) {
+        event.preventDefault();
+        firstLink.focus();
+      }
+    }
+  });
+
   updateNavVisibility();
   handleScroll();
 })();

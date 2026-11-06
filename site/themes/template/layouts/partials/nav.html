@@ -14,7 +14,7 @@
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-8" style="display: none;" id="desktop-nav">
+    <nav class="desktop-nav items-center gap-8" id="desktop-nav" aria-label="Main navigation">
       {{- range $navItems }}
         {{- $itemURL := .path | relURL -}}
         <a href="{{ $itemURL }}" class="nav-link"{{ if eq $.RelPermalink $itemURL }} aria-current="page"{{ end }}>{{ .label }}</a>
@@ -25,7 +25,7 @@
     </nav>
 
     <!-- Hamburger Button -->
-    <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" style="display: none; padding: 0.5rem; border-radius: 0.375rem; border: none; background: none; color: hsl(var(--foreground)); cursor: pointer;">
+    <button class="hamburger-btn" id="hamburger-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" style="padding: 0.5rem; border-radius: 0.375rem; border: none; background: none; color: hsl(var(--foreground)); cursor: pointer;">
       <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="3" y1="6" x2="21" y2="6"></line>
         <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -40,10 +40,10 @@
 </header>
 
 <!-- Mobile Backdrop -->
-<div class="mobile-backdrop" id="mobile-backdrop"></div>
+<div class="mobile-backdrop" id="mobile-backdrop" aria-hidden="true"></div>
 
 <!-- Mobile Menu -->
-<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
   {{- range $navItems }}
     {{- $itemURL := .path | relURL -}}
     <a href="{{ $itemURL }}" class="mobile-nav-link"{{ if eq $.RelPermalink $itemURL }} aria-current="page"{{ end }}>{{ .label }}</a>

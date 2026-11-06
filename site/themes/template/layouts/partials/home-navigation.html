@@ -7,7 +7,7 @@
   (dict "title" "Contact" "path" "contact/" "description" "Find the best ways to get in touch with me.")
 -}}
 
-<section class="section bg-muted-30" aria-labelledby="explore-heading" style="border-top: 1px solid hsl(var(--border) / 0.4);">
+<section class="home-navigation section bg-muted-30" aria-labelledby="explore-heading" style="border-top: 1px solid hsl(var(--border) / 0.4);">
   <div class="container" style="max-width: 72rem;">
     <div style="max-width: 42rem; margin-bottom: 3rem;">
       <p class="text-primary font-bold mb-3" style="letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.75rem;">
@@ -21,14 +21,14 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="home-navigation-grid grid grid-cols-1 sm:grid-cols-2 gap-6">
       {{- range $items }}
-        <a href="{{ .path | relURL }}" class="card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 12rem; padding: 2rem; color: inherit; text-decoration: none;">
+        <a href="{{ .path | relURL }}" class="home-navigation-card card" style="display: flex; flex-direction: column; justify-content: space-between; min-height: 12rem; padding: 2rem; color: inherit; text-decoration: none;">
           <div>
             <h3 class="font-display font-bold mb-3" style="font-size: 1.5rem;">{{ .title }}</h3>
             <p class="text-muted" style="line-height: 1.7;">{{ .description }}</p>
           </div>
-          <span class="text-primary font-bold" style="margin-top: 1.5rem;">
+          <span class="home-navigation-arrow text-primary font-bold" style="margin-top: 1.5rem;">
             View page <span aria-hidden="true">&rarr;</span>
           </span>
         </a>
