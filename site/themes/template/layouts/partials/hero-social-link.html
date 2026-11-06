@@ -1,0 +1,11 @@
+{{- if .value -}}
+  <a href="{{ .href }}" class="hero-social-link"{{ if .external }} target="_blank" rel="noopener noreferrer"{{ end }}>
+    {{- partial "social-icon.html" .icon -}}
+    <span>{{ .label }}</span>
+  </a>
+{{- else -}}
+  <span class="hero-social-link is-placeholder" aria-disabled="true" title="링크 준비 중">
+    {{- partial "social-icon.html" .icon -}}
+    <span>{{ .label }}</span>
+  </span>
+{{- end -}}

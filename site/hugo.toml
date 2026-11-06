@@ -1,21 +1,26 @@
 baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'Jane Doe — Software Engineer'
+languageCode = 'ko-kr'
+title = '김지빈 — 인공지능 엔지니어'
 
 
 [params]
-  firstName = "Jane"
-  lastName = "Doe"
-  tagline = "Software Engineer"
-  email = "jane.doe@example.com"
-  linkedin = "https://www.linkedin.com/in/example/"
-  location = "Remote"
-  profileImage = "/images/profile.jpg"
-  heroBackground = "/images/hero-bg.png"
+  navName = "rlawlqls"
+  firstName = "김지빈"
+  lastName = ""
+  tagline = "인공지능 엔지니어"
+  email = ""
+  github = ""
+  linkedin = ""
+  naver_blog = ""
+  instagram = ""
+  discord = ""
+  location = ""
+  profileImage = "/images/home_photo.jpg"
+  heroBackground = ""
   favicon = "/favicon.svg"
   ogImage = "/opengraph.jpg"
-  resumeFile = "/resume.pdf"
-  description = "Jane Doe — Software Engineer building reliable systems."
+  resumeFile = ""
+  description = "인공지능 엔지니어 김지빈의 포트폴리오입니다."
 
 disableKinds = ['taxonomy', 'term']
 

@@ -34,7 +34,7 @@
     mobileMenu.setAttribute('aria-hidden', 'false');
     mobileBackdrop.classList.add('open');
     hamburgerBtn.setAttribute('aria-expanded', 'true');
-    hamburgerBtn.setAttribute('aria-label', 'Close menu');
+    hamburgerBtn.setAttribute('aria-label', '메뉴 닫기');
     hamburgerBtn.querySelector('svg:first-child').style.display = 'none';
     hamburgerBtn.querySelector('svg:last-child').style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -49,7 +49,7 @@
     mobileMenu.setAttribute('aria-hidden', 'true');
     mobileBackdrop.classList.remove('open');
     hamburgerBtn.setAttribute('aria-expanded', 'false');
-    hamburgerBtn.setAttribute('aria-label', 'Open menu');
+    hamburgerBtn.setAttribute('aria-label', '메뉴 열기');
     hamburgerBtn.querySelector('svg:first-child').style.display = 'block';
     hamburgerBtn.querySelector('svg:last-child').style.display = 'none';
     document.body.style.overflow = '';

@@ -4,9 +4,9 @@
       &copy; {{ now.Year }} {{ .Site.Params.firstName }} {{ .Site.Params.lastName }}. All rights reserved.
     </p>
     {{- if .IsHome }}
-      <a href="#top" class="text-sm transition-colors" style="opacity: 0.8;">Back to Top</a>
+      <a href="#top" class="text-sm transition-colors" style="opacity: 0.8;">맨 위로</a>
     {{- else }}
-      <a href="{{ .Site.Home.RelPermalink }}" class="text-sm transition-colors" style="opacity: 0.8;">Back to Home</a>
+      <a href="{{ .Site.Home.RelPermalink }}" class="text-sm transition-colors" style="opacity: 0.8;">홈으로 돌아가기</a>
     {{- end }}
   </div>
 </footer>
