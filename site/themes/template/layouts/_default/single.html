@@ -16,18 +16,22 @@
       </div>
     </header>
 
-    <section class="section" style="padding-top: 4rem; padding-bottom: 4rem;">
-      <div class="container" style="max-width: 52rem;">
-        <div style="font-size: 1.0625rem; line-height: 1.8;">
-          {{ .Content }}
+    {{- with .Params.content_partial }}
+      {{- partial (printf "%s.html" .) $ -}}
+    {{- else }}
+      <section class="section" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container" style="max-width: 52rem; font-size: 1.0625rem; line-height: 1.8;">
+          {{ $.Content }}
         </div>
+      </section>
+    {{- end }}
 
-        <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid hsl(var(--border) / 0.6);">
-          <a href="{{ .Site.Home.RelPermalink }}" class="btn btn-outline">
-            <span aria-hidden="true">&larr;</span>
-            Back to Home
-          </a>
-        </div>
+    <section aria-label="Page navigation" style="padding: 2rem 0 4rem; background-color: hsl(var(--background));">
+      <div class="container" style="max-width: 52rem; padding-top: 2rem; border-top: 1px solid hsl(var(--border) / 0.6);">
+        <a href="{{ .Site.Home.RelPermalink }}" class="btn btn-outline">
+          <span aria-hidden="true">&larr;</span>
+          Back to Home
+        </a>
       </div>
     </section>
   </article>

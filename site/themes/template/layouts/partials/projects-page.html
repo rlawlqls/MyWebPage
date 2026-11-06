@@ -1,0 +1,62 @@
+<section id="projects" class="section bg-background" style="border-bottom: 1px solid hsl(var(--border) / 0.4);">
+  <div class="container" style="max-width: 72rem;">
+    <h2 class="section-header mb-10">
+      <span class="section-bar"></span>
+      Selected Projects
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {{- range .Site.Data.experience }}
+        {{- $company := .company -}}
+        {{- range .projects }}
+          <article class="card" style="padding: 2rem;">
+            <p class="text-primary font-bold uppercase tracking-widest mb-3" style="font-size: 0.625rem;">{{ $company }}</p>
+            <h3 class="font-display font-bold mb-3" style="font-size: 1.375rem;">{{ .title }}</h3>
+            {{- with .desc }}
+              <p class="text-muted" style="line-height: 1.7;">{{ . }}</p>
+            {{- end }}
+            {{- with .tags }}
+              <div class="flex flex-wrap gap-2 mt-6">
+                {{- range . }}<span class="badge">{{ . }}</span>{{- end }}
+              </div>
+            {{- end }}
+          </article>
+        {{- end }}
+      {{- end }}
+    </div>
+  </div>
+</section>
+
+{{- with .Site.Data.presentations }}
+  <section class="section bg-muted-20" aria-labelledby="activities-heading">
+    <div class="container" style="max-width: 72rem;">
+      <h2 id="activities-heading" class="section-header mb-10">
+        <span class="section-bar"></span>
+        Presentations &amp; Activities
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {{- range . }}
+          <article class="card" style="padding: 2rem;">
+            <div class="flex items-center justify-between gap-4 mb-4" style="flex-wrap: wrap;">
+              <p class="text-primary font-bold uppercase tracking-widest" style="font-size: 0.625rem;">{{ .event }}</p>
+              <p class="text-xs text-muted">{{ .date }}</p>
+            </div>
+            <h3 class="font-display font-bold mb-3" style="font-size: 1.375rem;">{{ .title }}</h3>
+            {{- with .description }}
+              <p class="text-muted" style="line-height: 1.7;">{{ . }}</p>
+            {{- end }}
+            {{- with .tags }}
+              <div class="flex flex-wrap gap-2 mt-6">
+                {{- range . }}<span class="badge">{{ . }}</span>{{- end }}
+              </div>
+            {{- end }}
+            {{- with .link }}
+              <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-sm text-primary font-bold" style="display: inline-block; margin-top: 1.5rem;">View details <span aria-hidden="true">&rarr;</span></a>
+            {{- end }}
+          </article>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+{{- end }}
