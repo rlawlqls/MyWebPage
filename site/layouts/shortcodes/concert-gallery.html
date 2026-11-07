@@ -1,0 +1,4 @@
+<div class="concert-gallery" aria-label="잔나비 콘서트 사진">
+  <img src="{{ (.Get "first") | relURL }}" alt="{{ .Get "firstAlt" }}" loading="lazy">
+  <img src="{{ (.Get "second") | relURL }}" alt="{{ .Get "secondAlt" }}" loading="lazy">
+</div>
