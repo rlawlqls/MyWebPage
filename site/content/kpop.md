@@ -1,16 +1,27 @@
 ---
 title: "K-POP"
-description: "밴드 콘서트의 생생한 에너지와 함께 음악을 즐기는 취미입니다."
+description: "잔나비 팬 JF의 유쾌한 콘서트 이야기입니다."
 ---
 
-밴드 음악을 좋아해 콘서트에 자주 갑니다. 음원으로 듣던 곡이 공연장의 연주와 관객의 합창으로 완성되는 순간을 좋아합니다.
+## 잔나비를 좋아하게 된 계기
 
-## 좋아하는 밴드, 잔나비
+{{< concert-gallery
+  first="images/jannabi-concert-ticket.jpg"
+  firstAlt="잔나비 콘서트장 앞에서 든 공연 티켓"
+  second="images/jannabi-concert-stage.jpg"
+  secondAlt="잔나비 콘서트가 끝난 뒤 무대 화면"
+>}}
 
-![무대 조명 아래 공연 중인 잔나비](https://img.hankyung.com/photo/202512/01.42815846.1.jpg)
+저는 잔나비 팬 **JF**입니다. 대학교 첫 대동제 때 잔나비 공연을 보다가 앵콜곡 **‘꿈과 책과 힘과 벽’**을 듣고 잔나비에 빠지게 되었습니다.
 
-잔나비 노래 중에서는 **‘꿈과 책과 힘과 벽’**을 가장 좋아하고, 잔나비 팬 **JF**로서 공연을 찾아 즐깁니다. 서정적인 가사와 밴드 사운드가 함께 만들어 내는 분위기가 좋아 오래 듣고 있습니다.
+잔나비 노래는 다 너무 좋습니다. 모두 잔나비를 사랑합시다! 🎸
 
-사진 출처: [한국경제의 잔나비 콘서트 기사](https://www.hankyung.com/article/202512290090H)
+## 함께 듣고 싶은 영상
+
+{{< youtube-embed
+  id="n_ZuTLZ3sgI"
+  title="잔나비 YouTube 영상"
+  url="https://youtu.be/n_ZuTLZ3sgI?si=sWO1C0zPkrk8fD8J"
+>}}
 
 [소개 페이지로 돌아가기](../about/)
