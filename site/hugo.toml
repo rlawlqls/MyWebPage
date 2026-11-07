@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://rlawlqls.github.io/MyWebPage/'
 locale = 'ko-KR'
 title = '김지빈 — 사람을 위한 AI 개발자'
 
@@ -19,8 +19,8 @@ title = '김지빈 — 사람을 위한 AI 개발자'
   location = ""
   profileImage = "images/home_photo.jpg"
   heroBackground = ""
-  favicon = "/favicon.svg"
-  ogImage = "/opengraph.jpg"
+  favicon = "favicon.svg"
+  ogImage = "images/home_photo.jpg"
   resumeFile = ""
   description = "사람의 일상에 필요한 문제를 AI와 소프트웨어로 해결하는 개발자 김지빈의 포트폴리오입니다."
 

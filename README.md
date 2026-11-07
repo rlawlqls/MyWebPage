@@ -1,315 +1,93 @@
-# kiyomi-portfolio
+# 김지빈 포트폴리오
 
-## 김지빈 포트폴리오 실행 및 배포
+전북대학교 컴퓨터인공지능학부 김지빈의 개인 포트폴리오입니다. 인공지능·금융권 IT·로보틱스 관심 분야와 프로젝트, 교육, 동아리, 멘토링, 봉사 및 수상 경험을 소개합니다.
 
-이 저장소의 실제 포트폴리오 소스는 `site/`에 있습니다. Hugo Extended 0.128.0 이상이 필요합니다.
+- 공개 사이트: <https://rlawlqls.github.io/MyWebPage/>
+- 저장소: <https://github.com/rlawlqls/MyWebPage>
+- 배포 기록: <https://github.com/rlawlqls/MyWebPage/actions>
 
-로컬 미리보기:
+## 개발 환경
+
+- Windows 11
+- Hugo Extended 0.167.0 (워크플로 고정 버전)
+- Python 3.12 (GitHub Pages 빌드 보조 스크립트)
+- Git 및 GitHub Actions
+
+Hugo Extended 설치 예시:
+
+```powershell
+winget install Hugo.Hugo.Extended
+hugo version
+```
+
+표시된 Hugo 버전이 0.128.0 이상인지 확인합니다. 이 저장소의 배포 워크플로는 재현성을 위해 0.167.0을 설치합니다.
+
+## 로컬 실행
+
+저장소 루트에서 다음 명령을 실행합니다.
 
 ```powershell
 cd site
 hugo server --config hugo.toml,pages.json --theme template --themesDir themes
 ```
 
-배포 결과물 빌드:
+터미널에 표시되는 로컬 주소를 브라우저에서 열어 확인합니다.
+
+## 배포용 빌드
+
+GitHub Pages와 같은 설정으로 결과물을 생성하려면 저장소 루트에서 실행합니다.
+
+```powershell
+python .github/pages_build.py --build
+```
+
+또는 `site/`에서 Hugo를 직접 실행할 수 있습니다.
 
 ```powershell
 cd site
-hugo --config hugo.toml,pages.json --theme template --themesDir themes --destination ../public
+hugo --gc --minify --config hugo.toml,pages.json --theme template --themesDir themes --destination ../public
 ```
 
-내용을 수정한 뒤 변경 파일을 확인하고 `main` 브랜치에 커밋·푸시하면 `.github/workflows/hugo-pages.yml`이 자동으로 빌드와 GitHub Pages 배포를 실행합니다. GitHub 저장소의 **Actions** 탭에서 실행 결과를, **Settings → Pages**에서 공개 주소를 확인할 수 있습니다.
+빌드 결과에는 `public/index.html`이 포함되어야 합니다.
 
-주요 수정 위치:
+## 수정 위치
 
 - 페이지 글: `site/content/`
 - 프로젝트·기술·수상·활동 데이터: `site/data/`
-- 메뉴와 페이지 구성: `site/themes/template/layouts/`
+- 메뉴와 페이지 구조: `site/themes/template/layouts/`
 - 스타일: `site/themes/template/assets/css/main.css`
-- 이미지: `site/static/images/`
+- 동작: `site/themes/template/assets/js/`
+- 이미지와 PDF: `site/static/images/`, `site/static/files/`
 
-### 출처와 이용 조건
+## 수정 후 재배포
+
+1. 변경 파일과 빌드를 확인합니다.
+
+   ```powershell
+   git status
+   python .github/pages_build.py --build
+   ```
+
+2. 변경 목적에 맞는 메시지로 커밋하고 `main`에 푸시합니다.
+
+   ```powershell
+   git add README.md .gitignore site
+   git commit -m "변경 내용을 설명하는 메시지"
+   git push origin main
+   ```
+
+3. [GitHub Actions](https://github.com/rlawlqls/MyWebPage/actions)에서 `Deploy Hugo to GitHub Pages` 실행이 성공했는지 확인합니다.
+4. 공개 사이트를 새로고침해 변경 내용과 내부 링크를 확인합니다.
+
+워크플로는 `main` push 때 자동 실행되며 Hugo 빌드 결과를 GitHub Pages에 배포합니다. 공개 주소의 하위 경로 `/MyWebPage/`는 `site/pages.json`과 배포 빌드 스크립트가 반영합니다.
+
+## 출처와 이용 조건
 
 - 원본 테마: [kiyomi-portfolio](https://github.com/mathscantor/hugo-theme-kiyomi-portfolio), MIT License
 - 테마 라이선스 전문: [LICENSE](LICENSE)
-- 개인 사진과 프로젝트 자료: 김지빈 제공 자료
-- 잔나비 콘서트 사진: [한국경제 기사](https://www.hankyung.com/article/202512290090H)에서 출처를 밝히고 교육용 포트폴리오에 참조
-
-사이트의 개인 글과 프로젝트 설명은 포트폴리오 작성자가 직접 구성한 내용이며, 외부 자료는 해당 링크와 이용 조건을 따릅니다.
-
-A single-page [Hugo](https://gohugo.io) portfolio theme with an animated hero,
-experience timeline, clickable skills, presentations, education/certifications,
-awards, and a floating contact button. Content is driven entirely by simple
-YAML data files and site params, so you can build a polished personal site
-without touching any templates.
-
-- License: MIT
-- Hugo: extended, `>= 0.128.0`
-
-![screenshot](https://raw.githubusercontent.com/mathscantor/hugo-theme-kiyomi-portfolio/main/images/screenshot.png)
-
-## Features
-
-- Single-page layout with smooth-scroll navigation and a mobile menu
-- Scroll-reveal animations and staggered transitions
-- Hero with profile photo, tagline, location, and quick contact links
-- Experience timeline with optional projects and media mentions
-- Clickable skill pills with per-skill explanations + language proficiency bars
-- Presentations grid supporting images or videos
-- Education and certifications columns
-- Awards & recognition cards
-- Floating contact button (email / LinkedIn) and downloadable resume link
-- Every section auto-hides when its data is absent
-
-## Requirements
-
-- Hugo **extended** edition, version **0.128.0** or newer.
-
-## Installation
-
-### Option A: Git submodule
-
-From the root of your Hugo site:
-
-```bash
-git submodule add https://github.com/mathscantor/hugo-theme-kiyomi-portfolio.git themes/kiyomi-portfolio
-```
-
-Then set the theme in your `hugo.toml`:
-
-```toml
-theme = 'kiyomi-portfolio'
-```
-
-### Option B: Hugo Modules
-
-Initialize modules (once) and import the theme:
-
-```bash
-hugo mod init github.com/you/your-site
-```
-
-```toml
-# hugo.toml
-[module]
-  [[module.imports]]
-    path = "github.com/mathscantor/hugo-theme-kiyomi-portfolio"
-```
-
-```bash
-hugo mod get -u
-```
-
-## Quick start
-
-1. Install the theme (above) and set `theme = 'kiyomi-portfolio'`.
-2. Copy the starter data into your site (only fills in files you don't have):
-
-   ```bash
-   bash themes/kiyomi-portfolio/scripts/init-data.sh
-   ```
-
-   Or do it manually with a no-clobber copy:
-
-   ```bash
-   cp -rn themes/kiyomi-portfolio/exampleSite/data/. data/
-   cp -n  themes/kiyomi-portfolio/exampleSite/content/_index.md content/_index.md
-   ```
-
-3. Edit `hugo.toml` `[params]`, the files in `data/`, and `content/_index.md`.
-4. Add your images under `static/` (see [Assets](#assets)).
-5. Run the dev server:
-
-   ```bash
-   hugo server
-   ```
-
-You can also preview the bundled demo directly from the theme:
-
-```bash
-cd themes/kiyomi-portfolio/exampleSite
-hugo server --themesDir ../..
-```
-
-## Configuration (site params)
-
-Set these under `[params]` in your `hugo.toml`:
-
-| Param            | Purpose                                   | Example                                        |
-| ---------------- | ----------------------------------------- | ---------------------------------------------- |
-| `firstName`      | First name (hero, nav, footer)            | `"Jane"`                                       |
-| `lastName`       | Last name (nav, footer, resume filename)  | `"Doe"`                                         |
-| `tagline`        | Short role/tagline under the hero name    | `"Software Engineer"`                          |
-| `email`          | Contact email (hero, contact, FAB)        | `"jane.doe@example.com"`                       |
-| `linkedin`       | LinkedIn profile URL                      | `"https://www.linkedin.com/in/example/"`       |
-| `location`       | Location label in the hero                | `"Remote"`                                     |
-| `profileImage`   | Hero profile photo path                   | `"/images/profile.png"`                        |
-| `heroBackground` | Hero background image path                | `"/images/hero-bg.png"`                        |
-| `favicon`        | Favicon path (SVG)                        | `"/favicon.svg"`                               |
-| `ogImage`        | Open Graph / Twitter share image          | `"/opengraph.jpg"`                             |
-| `resumeFile`     | Downloadable resume path                  | `"/resume.pdf"`                                |
-| `description`    | Meta description + social card text       | `"Jane Doe — Software Engineer"`               |
-
-The site `title` (top-level in `hugo.toml`) is used for the `<title>` tag and
-social cards.
-
-## About section content
-
-The **About** section renders the body of `content/_index.md`. Add a `title`
-in front matter and write your intro as Markdown:
-
-```markdown
----
-title: "Jane Doe — Software Engineer"
----
-
-Hi, I'm Jane. Replace this with a short introduction about yourself.
-```
-
-## Data reference
-
-All data files live in your site's `data/` directory. Each maps to a section;
-if a file is missing or empty, that section is hidden.
-
-### `data/experience.yaml`
-
-A list of roles, newest first. `context`, `projects`, and `media_mentions` are
-optional.
-
-```yaml
-- company: "Example Corp"
-  title: "Senior Software Engineer"
-  period: "Jan 2022 - Present"
-  context: "Optional one-line description of the company or team."
-  bullets:
-    - "A key responsibility or achievement."
-    - "Another concise bullet point."
-  projects:                       # optional
-    - title: "Sample Project"
-      desc: "What this project does."
-      tags: ["Go", "Distributed Systems"]
-  media_mentions:                 # optional
-    - publication: "Example News"
-      article_title: "How Example Corp shipped X"
-      excerpt: "A short quote or summary."
-      url: "https://example.com/article"
-```
-
-### `data/presentations.yaml`
-
-A list of talks. `media_type` is `"image"` or `"video"`; `media_src` points to
-a file under `static/`. `description` and `link` are optional.
-
-```yaml
-- title: "An Example Conference Talk"
-  event: "Sample Conference 2025"
-  date: "Oct 2025"
-  description: "A short summary of the talk."
-  tags: ["Topic A", "Topic B"]
-  media_type: "image"             # or "video"
-  media_src: "/images/talk.png"
-  link: "https://example.com/slides"   # optional
-```
-
-### `data/skills.yaml`
-
-Skills grouped by category. Each skill exposes an `explanation` shown when the
-pill is clicked.
-
-```yaml
-- category: "Technical"
-  items:
-    - name: "Go"
-      explanation: "Used to build backend services and CLI tools."
-    - name: "Python"
-      explanation: "Used for scripting and automation."
-```
-
-### `data/languages.yaml`
-
-Spoken languages with a `level` label and a `percent` (0-100) for the bar.
-
-```yaml
-- name: "English"
-  level: "Native"
-  percent: 100
-```
-
-### `data/education.yaml`
-
-Education history, newest first.
-
-```yaml
-- degree: "BSc in Computer Science"
-  school: "Example University"
-  year: "2019"
-```
-
-### `data/certifications.yaml`
-
-Certifications grouped by year, newest first.
-
-```yaml
-- year: "2025"
-  items:
-    - "Example Professional Certification"
-```
-
-### `data/awards.yaml`
-
-Awards & recognition cards. Each links to `link`. Remove or empty the file to
-hide the Awards section.
-
-```yaml
-- title: "Example Award of Excellence"
-  source: "Sample Organization"
-  link: "https://example.com"
-```
-
-## Assets
-
-The theme references several files via params and presentation `media_src`.
-Place them under your site's `static/` directory:
-
-| Asset            | Default path (under `static/`)     |
-| ---------------- | ---------------------------------- |
-| Profile photo    | `images/profile.png`               |
-| Hero background  | `images/hero-bg.png`               |
-| Favicon          | `favicon.svg`                      |
-| Open Graph image | `opengraph.jpg`                    |
-| Resume           | `resume.pdf`                       |
-| Presentation art | `images/<your-file>.png` / `.mp4`  |
-
-These are intentionally not shipped with the theme; supply your own.
-
-## Customization
-
-Colors, fonts, radius, and spacing are defined as CSS custom properties at the
-top of `assets/css/main.css` (`:root { --primary: ...; --font-display: ...; }`).
-Override them in your own CSS, or fork the theme's stylesheet. Animations live
-in `assets/css/animations.css`.
-
-## How placeholder data works
-
-Hugo never writes into your source tree during a build, so the theme cannot
-"auto-create" files in your `data/` directory. The theme also intentionally
-does **not** ship a top-level `data/` directory, so your project's `data/`
-files are always authoritative: whatever you put in `data/` is exactly what
-renders, and an empty or missing file simply hides that section (each section
-is guarded in `layouts/index.html`).
-
-To get started quickly, use the editable starter files instead:
-
-- **Copy-if-missing starter (recommended).** `exampleSite/` contains a complete
-  working site. The `scripts/init-data.sh` helper (or the `cp -rn` one-liner
-  above) copies those data files and `content/_index.md` into your site **only
-  when they don't already exist**, so you get editable copies without ever
-  clobbering your own work. Re-running it is safe.
-
-Because there are no theme-level data defaults, you never see Hugo's
-"overridden by higher precedence data" warnings, and you stay in full control
-of every section.
-
-## License
-
-MIT. See the [LICENSE](LICENSE) file for the full text.
+- 글, 자기소개, 학습 계획, 활동 및 프로젝트 설명: 김지빈 작성
+- 개인·활동 사진과 프로젝트 화면: 김지빈 제공 자료
+- 잔나비 콘서트 사진: [한국경제 기사](https://www.hankyung.com/article/202512290090H) 출처 표기 후 교육용 포트폴리오에서 사용
+- 웹 글꼴: [Google Fonts Noto Sans KR](https://fonts.google.com/noto/specimen/Noto+Sans+KR), SIL Open Font License
+
+생성형 AI는 일부 HTML·CSS·JavaScript 수정안 작성과 접근성·반응형 검토를 보조했습니다. 공개할 내용의 선택, 개인 경험 서술, 최종 코드 반영 및 동작 검증은 작성자가 직접 수행했습니다. 외부 자료는 각 출처와 이용 조건을 따릅니다.
