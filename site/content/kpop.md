@@ -16,8 +16,6 @@ description: "잔나비 팬 JF의 유쾌한 콘서트 이야기입니다."
 
 잔나비 노래는 다 너무 좋습니다. 모두 잔나비를 사랑합시다! 🎸
 
-## 함께 듣고 싶은 영상
-
 {{< youtube-embed
   id="n_ZuTLZ3sgI"
   title="잔나비 YouTube 영상"
