@@ -5,6 +5,7 @@
   project: "보듬길"
   summary: "교통약자 동반 가족을 위한 지역 여행 설계 서비스"
   image: "images/project-bodeumgil.png"
+  certificate: "files/award-honam-sw-startup-2026.pdf"
 
 - title: "최우수상"
   event: "2026 오픈소스 SW 아이디어 해커톤 캠프"
@@ -13,6 +14,7 @@
   project: "채움"
   summary: "전북의 빈 공간을 창업의 기회로 전환하는 AI 플랫폼"
   image: "images/project-chaeum.png"
+  certificate: "files/award-open-source-hackathon-2026.pdf"
 
 - title: "노력상"
   event: "2026 전북대학교 프로그래밍 경진대회"

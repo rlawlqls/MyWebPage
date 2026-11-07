@@ -51,6 +51,7 @@
       </div>
       <ol class="award-list" aria-label="최근 수상 순서">
         {{ range sort .Site.Data.awards "date" "desc" }}
+          {{ $award := . }}
           <li class="award-list-item">
             <div class="award-list-date">
               <time datetime="{{ replace .date "." "-" }}">{{ .date }}</time>
@@ -63,6 +64,12 @@
                 {{ with .project }}<span>{{ . }}</span>{{ end }}
               </p>
               {{ with .summary }}<p class="award-list-summary">{{ . }}</p>{{ end }}
+              {{ with .certificate }}
+                <a class="award-certificate-link" href="{{ . | relURL }}" download aria-label="{{ $award.event }} 상장 PDF 다운로드">
+                  <span>수상내역 확인</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+              {{ end }}
             </div>
           </li>
         {{ end }}
