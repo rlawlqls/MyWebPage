@@ -1,23 +1,20 @@
-# Talks and presentations. `media_type` is "image" or "video".
-# `media_src` is a path under your site's static/ directory.
-# `description` and `link` are optional.
-- title: "An Example Conference Talk"
-  event: "Sample Conference 2025"
-  date: "Oct 2025"
-  description: "A short summary of what this talk covered."
+- title: "Speech Bridge: FTD 환자를 위한 발화 복원 서비스"
+  event: "UNLV 해외 교육연수 최종 발표"
+  date: "2026.08"
+  description: "음성 데이터 수집과 모델 실험, Arduino와 웹 연동 결과를 영어로 발표했습니다."
   tags:
-    - "Topic A"
-    - "Topic B"
+    - "Physical AI"
+    - "English Presentation"
   media_type: "image"
-  media_src: "/images/presentation-placeholder.png"
-  # link: "https://example.com/slides"
+  media_src: "/images/project-speech-bridge.png"
+  link: "https://github.com/rlawlqls/JUCSY"
 
-- title: "Another Talk or Workshop"
-  event: "Meetup 2024"
-  date: "Mar 2024"
-  description: ""
+- title: "채움: 전북의 빈 공간을 창업 기회로"
+  event: "오픈소스 SW 아이디어 해커톤 캠프"
+  date: "2026.09"
+  description: "지역의 유휴 공간과 창업 아이디어를 AI로 연결하는 서비스 흐름을 팀과 함께 발표했습니다."
   tags:
-    - "Topic C"
+    - "AI Service"
+    - "Hackathon"
   media_type: "image"
-  media_src: "/images/presentation-placeholder.png"
-  # link: ""
+  media_src: "/images/project-chaeum.png"
