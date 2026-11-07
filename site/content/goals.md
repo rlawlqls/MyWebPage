@@ -1,18 +1,34 @@
 ---
-title: "Goals"
-description: "Explore the goals and direction that guide my work and learning."
+title: "목표"
+description: "아이디어를 AI 모델과 서비스로 연결하는 전 과정을 스스로 완성하고자 합니다."
 ---
 
-Use this page to explain the direction you want your work and learning to take.
+제 학습 목표는 **사용자의 문제를 발견하고, 데이터를 수집하고, AI 모델을 만들어, 웹이나 하드웨어로 제공하는 전 과정**을 스스로 완성할 수 있는 개발자가 되는 것입니다.
 
-## Near-term goals
+## 관심 분야와 선택 이유
 
-Describe the skills you want to strengthen and the projects you want to complete next.
+인공지능, 사용자 중심 서비스, Physical AI에 관심이 있습니다. 단순히 모델의 정확도를 높이는 것을 넘어, 그 기술이 누군가의 일상에서 실제로 작동하는 모습을 확인할 때 가장 큰 보람을 느낍니다.
 
-## Long-term goals
+## 다음 학습 계획
 
-Describe the kind of work, impact, or professional growth you want to pursue over time.
+- 매주 한 번씩 머신러닝 실험을 기록하며 데이터 전처리와 모델 평가 역량을 높입니다.
+- 학기당 한 개 이상의 아이디어를 작동하는 MVP로 만들고 사용자 피드백을 받습니다.
+- GitHub에 실험과 개발 과정을 작은 단위로 기록하고, 결과와 한계를 README에 정리합니다.
+- 팀 프로젝트에서 기획과 개발을 모두 경험하며 기술을 사용자의 언어로 설명하는 역량을 키웁니다.
 
-## How I plan to grow
+## 대표 활동: Speech Bridge
 
-Explain the habits, learning activities, or experiences that will help you reach those goals.
+**수행 기간:** 2026년 7월 14일 - 8월 20일, UNLV 해외 교육연수 프로그램에서 완료
+
+FTD 환자의 짧거나 불완전한 발화를 문장으로 복원해 의사소통을 돕는 Physical AI 서비스를 만들었습니다. 프로젝트 주제 선정부터 문제 상황 분석, 음성 데이터 녹음과 수집, 라벨링 방법과 window 크기를 바꾸며 진행한 모델 학습, Arduino와 웹 인터페이스 연동, 영어 발표에 참여했습니다.
+
+### 핵심 선택과 결과
+
+- 직접 녹음한 데이터를 사용해 실제 발화 환경에 가깝게 실험했습니다.
+- 데이터 라벨과 window 크기를 다르게 적용하며 인식 결과를 비교했습니다.
+- 분류 결과를 Arduino와 웹에 연결해 사용자가 복원된 문장을 즉시 확인할 수 있는 서비스로 완성했습니다.
+- [JUCSY GitHub 저장소](https://github.com/rlawlqls/JUCSY)에서 구현 결과를 확인할 수 있습니다.
+
+### 배운 점과 다음 개선 방향
+
+모델 자체만 잘 작동해서는 부족하며, 데이터 수집과 전처리부터 인터페이스, 하드웨어 통신까지 모든 단계가 이어져야 사용자에게 도움이 된다는 점을 배웠습니다. 다음에는 다양한 화자의 데이터를 더 많이 확보하고, 오분류 사례를 유형별로 기록해 모델과 인터페이스를 함께 개선하고자 합니다.
