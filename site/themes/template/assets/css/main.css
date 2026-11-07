@@ -519,6 +519,61 @@ button {
   display: block;
 }
 
+/* Compact skills overview */
+.skills-compact-section {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.skills-compact-section .section-header {
+  margin-bottom: 1.25rem;
+}
+.skills-compact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+.skills-category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.skills-category-title {
+  margin: 0 0 0.4rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.skills-pill-list,
+.language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.skills-compact-section .skill-pill {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.7rem;
+}
+.skills-compact-section .skill-explanation {
+  margin-top: 0.4rem;
+  padding: 0.55rem 0.65rem;
+  line-height: 1.5;
+}
+.language-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid hsl(var(--border));
+  border-radius: 9999px;
+  background-color: hsl(var(--background));
+  font-size: 0.7rem;
+}
+.language-chip span {
+  color: hsl(var(--muted-foreground));
+}
+
 /* Timeline */
 .timeline-line {
   position: absolute;
@@ -1357,22 +1412,28 @@ a.hero-social-link:hover {
 }
 
 /* Education and activity timeline */
+.education-summary {
+  margin-bottom: 2rem;
+}
+.education-summary .card {
+  padding: 1rem 1.15rem;
+}
 .activity-timeline {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.8rem;
   list-style: none;
   margin: 0;
-  padding: 0 0 0 2rem;
+  padding: 0 0 0 1.25rem;
 }
 .activity-timeline::before {
   content: '';
   position: absolute;
   top: 0.5rem;
   bottom: 0.5rem;
-  left: 0.45rem;
-  width: 2px;
+  left: 0.25rem;
+  width: 1px;
   background-color: hsl(var(--border));
 }
 .activity-timeline-item {
@@ -1381,41 +1442,46 @@ a.hero-social-link:hover {
 }
 .activity-timeline-marker {
   position: absolute;
-  top: 1.75rem;
-  left: -1.93rem;
-  width: 0.85rem;
-  height: 0.85rem;
-  border: 3px solid hsl(var(--background));
+  top: 1.35rem;
+  left: -1.25rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 2px solid hsl(var(--background));
   border-radius: 9999px;
   background-color: hsl(var(--primary));
   box-shadow: 0 0 0 1px hsl(var(--primary));
 }
 .activity-card {
-  padding: 1.75rem;
+  padding: 1rem 1.15rem;
 }
 .activity-card-heading {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 0.85rem;
+}
+.activity-title {
+  font-size: 1.05rem;
 }
 .activity-period {
   flex-shrink: 0;
-  padding: 0.35rem 0.65rem;
+  padding: 0.22rem 0.5rem;
   border-radius: 9999px;
   background-color: hsl(var(--primary) / 0.06);
   color: hsl(var(--primary));
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 700;
   white-space: nowrap;
 }
 .activity-bullets {
-  margin: 1.25rem 0 0;
-  padding-left: 1.25rem;
+  margin: 0.7rem 0 0;
+  padding-left: 1.1rem;
   color: hsl(var(--muted-foreground));
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 .activity-bullets li + li {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 /* Awards inside Skills */
@@ -1497,9 +1563,20 @@ a.hero-social-link:hover {
 }
 
 @media (max-width: 639px) {
+  .skills-compact-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .skills-compact-layout {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  .skills-category-list {
+    gap: 0.65rem;
+  }
   .project-card,
   .activity-card {
-    padding: 1.25rem;
+    padding: 1rem;
   }
   .award-list-item {
     grid-template-columns: 1fr;

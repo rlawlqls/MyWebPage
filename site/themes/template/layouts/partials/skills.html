@@ -1,18 +1,16 @@
-<section id="skills" class="section bg-muted-20" style="padding-top: 4rem; padding-bottom: 4rem;">
+<section id="skills" class="section bg-muted-20 skills-compact-section">
   <div class="container" style="max-width: 64rem;">
     <div class="fade-in">
       <h2 class="section-header">
         <span class="section-bar"></span>
         기술과 언어
       </h2>
-      <p class="text-xs text-muted mt-3 mb-10 ml-12">기술을 선택하면 프로젝트에서 실제로 사용한 사례를 확인할 수 있습니다.</p>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+      <div class="skills-compact-layout">
+        <div class="skills-category-list">
           {{ range .Site.Data.skills }}
           <div data-skill-category="{{ .category }}">
-            <p class="text-muted font-bold uppercase tracking-widest mb-3" style="font-size: 0.625rem; opacity: 0.7;">{{ .category }}</p>
-            <div class="flex flex-wrap gap-2">
+            <p class="skills-category-title">{{ .category }}</p>
+            <div class="skills-pill-list">
               {{ range .items }}
               <button type="button"
                 class="skill-pill"
@@ -29,18 +27,10 @@
         </div>
 
         <div>
-          <p class="text-muted font-bold uppercase tracking-widest mb-6" style="font-size: 0.625rem; opacity: 0.7;">Language Proficiency</p>
-          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <p class="skills-category-title">언어</p>
+          <div class="language-list" aria-label="언어 능력">
             {{ range .Site.Data.languages }}
-            <div class="fade-in">
-              <div class="flex items-center justify-between mb-2">
-                <span class="text-sm font-semibold text-foreground">{{ .name }}</span>
-                <span class="text-primary font-medium tracking-wide" style="font-size: 0.6875rem; opacity: 0.7;">{{ .level }}</span>
-              </div>
-              <div class="progress-bar" role="progressbar" aria-label="{{ .name }} {{ .level }}" aria-valuenow="{{ .percent }}" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar-fill" style="width: {{ .percent }}%;"></div>
-              </div>
-            </div>
+              <span class="language-chip"><strong>{{ .name }}</strong><span>{{ .level }}</span></span>
             {{ end }}
           </div>
         </div>
