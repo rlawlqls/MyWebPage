@@ -1,7 +1,7 @@
 {{- if or .Site.Params.email .Site.Params.linkedin }}
 <!-- Floating Contact Button (simplified chatbot replacement) -->
-<div id="contact-fab-popover" class="fab-popover">
-  <p class="font-semibold text-sm mb-3 text-foreground">연락하기</p>
+<div id="contact-fab-popover" class="fab-popover" role="dialog" aria-labelledby="contact-fab-title" aria-hidden="true" inert>
+  <p id="contact-fab-title" class="font-semibold text-sm mb-3 text-foreground">연락하기</p>
   <div style="display: flex; flex-direction: column; gap: 0.5rem;">
     {{- with .Site.Params.email }}
     <a href="mailto:{{ . }}?subject=Portfolio%20Inquiry" class="flex items-center gap-3 p-3 rounded-lg transition-colors" style="border: 1px solid hsl(var(--border)); background: hsl(var(--muted) / 0.3);">
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<button id="contact-fab" class="fab" aria-label="연락하기" aria-expanded="false">
+<button id="contact-fab" class="fab" aria-label="연락하기" aria-expanded="false" aria-controls="contact-fab-popover">
   <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
 </button>
 {{- end }}

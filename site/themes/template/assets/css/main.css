@@ -1317,6 +1317,14 @@ a.hero-social-link:hover {
     min-height: 10rem !important;
     padding: 1.5rem !important;
   }
+  .home-navigation-heading-line {
+    display: block;
+    word-break: keep-all;
+  }
+  .home-navigation-description {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
   .hero-affiliation {
     margin-bottom: 0.65rem;
     font-size: 0.84rem;
