@@ -1,53 +1,55 @@
 <section id="education" class="section bg-background" style="border-top: 1px solid hsl(var(--border) / 0.4);">
-  <div class="container" style="max-width: 80rem;">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-
-      <!-- Education -->
-      <div class="fade-in">
-        <h2 class="section-header mb-10">
-          <span class="section-bar"></span>
-          Education
-        </h2>
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          {{ range .Site.Data.education }}
-          <div class="card p-6 border-l-4" style="border-left: 4px solid hsl(var(--primary));">
-            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 0.5rem;">
-              <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 0.5rem;">
-                <h3 class="font-bold text-lg">{{ .degree }}</h3>
-                <span class="text-sm font-semibold text-primary" style="white-space: nowrap; background-color: hsl(var(--primary) / 0.05); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">
-                  {{ .year }}
-                </span>
+  <div class="container" style="max-width: 72rem;">
+    <div class="fade-in" style="margin-bottom: 4rem;">
+      <h2 class="section-header mb-8">
+        <span class="section-bar"></span>
+        학력
+      </h2>
+      <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        {{ range .Site.Data.education }}
+          <article class="card p-6 border-l-4" style="border-left: 4px solid hsl(var(--primary));">
+            <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 0.75rem;">
+              <div>
+                <h3 class="font-bold text-lg mb-1">{{ .degree }}</h3>
+                <p class="text-muted">{{ .school }}</p>
               </div>
-              <p class="text-muted">{{ .school }}</p>
+              <span class="text-sm font-semibold text-primary" style="white-space: nowrap; background-color: hsl(var(--primary) / 0.05); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">{{ .year }}</span>
             </div>
-          </div>
-          {{ end }}
-        </div>
+          </article>
+        {{ end }}
       </div>
+    </div>
 
-      <!-- Certifications -->
-      <div class="fade-in delay-2">
-        <h2 class="section-header mb-10">
+    <div class="fade-in delay-2">
+      <div style="max-width: 46rem; margin-bottom: 2.5rem;">
+        <h2 class="section-header mb-4">
           <span class="section-bar"></span>
-          Certifications
+          교육과 활동
         </h2>
-        <div style="display: flex; flex-direction: column; gap: 2rem;">
-          {{ range .Site.Data.certifications }}
-          <div class="cert-group">
-            <div class="cert-dot"></div>
-            <h3 class="text-sm font-bold text-primary uppercase tracking-wide mb-3">{{ .year }}</h3>
-            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
-              {{ range .items }}
-              <li class="text-muted text-sm" style="background-color: hsl(var(--muted) / 0.4); padding: 0.75rem; border-radius: 0.5rem; border: 1px solid hsl(var(--border) / 0.5);">
-                {{ . }}
-              </li>
-              {{ end }}
-            </ul>
-          </div>
-          {{ end }}
-        </div>
+        <p class="text-muted" style="line-height: 1.8;">교육, 멘토링, 동아리와 봉사 경험을 시작 시점부터 시간순으로 정리했습니다.</p>
       </div>
-
+      <ol class="activity-timeline" aria-label="교육과 활동 시간순 목록">
+        {{ range .Site.Data.experience }}
+          <li class="activity-timeline-item">
+            <div class="activity-timeline-marker" aria-hidden="true"></div>
+            <article class="card activity-card">
+              <div class="activity-card-heading">
+                <div>
+                  <p class="text-primary font-bold uppercase tracking-widest mb-2" style="font-size: 0.625rem;">{{ .category }}</p>
+                  <h3 class="font-display font-bold" style="font-size: 1.35rem;">{{ .company }}</h3>
+                  <p class="font-semibold mt-2">{{ .title }}</p>
+                </div>
+                <time class="activity-period">{{ .period }}</time>
+              </div>
+              {{ with .bullets }}
+                <ul class="activity-bullets">
+                  {{ range . }}<li>{{ . }}</li>{{ end }}
+                </ul>
+              {{ end }}
+            </article>
+          </li>
+        {{ end }}
+      </ol>
     </div>
   </div>
 </section>
