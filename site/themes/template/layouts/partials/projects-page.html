@@ -1,62 +1,45 @@
 <section id="projects" class="section bg-background" style="border-bottom: 1px solid hsl(var(--border) / 0.4);">
   <div class="container" style="max-width: 72rem;">
-    <h2 class="section-header mb-10">
-      <span class="section-bar"></span>
-      Selected Projects
-    </h2>
+    <div style="max-width: 48rem; margin-bottom: 3rem;">
+      <h2 class="section-header mb-4">
+        <span class="section-bar"></span>
+        프로젝트와 경험
+      </h2>
+      <p class="text-muted" style="line-height: 1.8;">카드를 선택하면 문제와 목표, 제가 맡은 역할, 구현 과정과 결과를 자세히 볼 수 있습니다.</p>
+    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {{- range .Site.Data.experience }}
-        {{- $company := .company -}}
-        {{- range .projects }}
-          <article class="card" style="padding: 2rem;">
-            <p class="text-primary font-bold uppercase tracking-widest mb-3" style="font-size: 0.625rem;">{{ $company }}</p>
-            <h3 class="font-display font-bold mb-3" style="font-size: 1.375rem;">{{ .title }}</h3>
-            {{- with .desc }}
-              <p class="text-muted" style="line-height: 1.7;">{{ . }}</p>
-            {{- end }}
+      {{- range .Site.Data.projects }}
+        {{- $project := . -}}
+        <article class="project-card card">
+          {{- with .image }}
+            <a href="{{ $project.slug | relURL }}" class="project-card-image-link" aria-label="{{ $project.title }} 상세 페이지 보기">
+              <img src="{{ . | relURL }}" alt="{{ $project.image_alt }}" class="project-card-image" loading="lazy">
+            </a>
+          {{- end }}
+          <div class="project-card-body">
+            <div class="flex items-center justify-between gap-4 mb-3" style="flex-wrap: wrap;">
+              <p class="text-primary font-bold uppercase tracking-widest" style="font-size: 0.625rem;">{{ .program }}</p>
+              <p class="text-xs text-muted">{{ .period }}</p>
+            </div>
+            <h3 class="font-display font-bold mb-2" style="font-size: 1.5rem;">
+              <a href="{{ .slug | relURL }}" class="project-title-link">{{ .title }}</a>
+            </h3>
+            <p class="font-semibold mb-3" style="font-size: 0.9375rem;">{{ .subtitle }}</p>
+            <p class="text-muted" style="line-height: 1.7;">{{ .description }}</p>
             {{- with .tags }}
-              <div class="flex flex-wrap gap-2 mt-6">
+              <div class="flex flex-wrap gap-2 mt-5">
                 {{- range . }}<span class="badge">{{ . }}</span>{{- end }}
               </div>
             {{- end }}
-          </article>
-        {{- end }}
+            <div class="project-card-actions">
+              <a href="{{ .slug | relURL }}" class="btn btn-primary project-detail-button">자세히 보기 <span aria-hidden="true">&rarr;</span></a>
+              {{- with .notion }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="project-external-link">Notion <span class="sr-only">새 창</span></a>{{- end }}
+              {{- with .github }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="project-external-link">GitHub <span class="sr-only">새 창</span></a>{{- end }}
+            </div>
+          </div>
+        </article>
       {{- end }}
     </div>
   </div>
 </section>
-
-{{- with .Site.Data.presentations }}
-  <section class="section bg-muted-20" aria-labelledby="activities-heading">
-    <div class="container" style="max-width: 72rem;">
-      <h2 id="activities-heading" class="section-header mb-10">
-        <span class="section-bar"></span>
-        Presentations &amp; Activities
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {{- range . }}
-          <article class="card" style="padding: 2rem;">
-            <div class="flex items-center justify-between gap-4 mb-4" style="flex-wrap: wrap;">
-              <p class="text-primary font-bold uppercase tracking-widest" style="font-size: 0.625rem;">{{ .event }}</p>
-              <p class="text-xs text-muted">{{ .date }}</p>
-            </div>
-            <h3 class="font-display font-bold mb-3" style="font-size: 1.375rem;">{{ .title }}</h3>
-            {{- with .description }}
-              <p class="text-muted" style="line-height: 1.7;">{{ . }}</p>
-            {{- end }}
-            {{- with .tags }}
-              <div class="flex flex-wrap gap-2 mt-6">
-                {{- range . }}<span class="badge">{{ . }}</span>{{- end }}
-              </div>
-            {{- end }}
-            {{- with .link }}
-              <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="text-sm text-primary font-bold" style="display: inline-block; margin-top: 1.5rem;">View details <span aria-hidden="true">&rarr;</span></a>
-            {{- end }}
-          </article>
-        {{- end }}
-      </div>
-    </div>
-  </section>
-{{- end }}
