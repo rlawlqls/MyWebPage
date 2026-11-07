@@ -8,37 +8,28 @@
       <p class="text-muted" style="line-height: 1.8;">카드를 선택하면 문제와 목표, 제가 맡은 역할, 구현 과정과 결과를 자세히 볼 수 있습니다.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="project-card-grid">
       {{- range .Site.Data.projects }}
-        {{- $project := . -}}
-        <article class="project-card card">
-          {{- with .image }}
-            <a href="{{ $project.slug | relURL }}" class="project-card-image-link" aria-label="{{ $project.title }} 상세 페이지 보기">
-              <img src="{{ . | relURL }}" alt="{{ $project.image_alt }}" class="project-card-image" loading="lazy">
-            </a>
-          {{- end }}
-          <div class="project-card-body">
+        <a href="{{ .slug | relURL }}" class="project-card card" aria-label="{{ .title }} 세부 페이지 보기">
+          <div class="project-card-content">
             <div class="flex items-center justify-between gap-4 mb-3" style="flex-wrap: wrap;">
               <p class="text-primary font-bold uppercase tracking-widest" style="font-size: 0.625rem;">{{ .program }}</p>
               <p class="text-xs text-muted">{{ .period }}</p>
             </div>
-            <h3 class="font-display font-bold mb-2" style="font-size: 1.5rem;">
-              <a href="{{ .slug | relURL }}" class="project-title-link">{{ .title }}</a>
-            </h3>
+            <h3 class="font-display font-bold mb-2" style="font-size: 1.35rem;">{{ .title }}</h3>
             <p class="font-semibold mb-3" style="font-size: 0.9375rem;">{{ .subtitle }}</p>
-            <p class="text-muted" style="line-height: 1.7;">{{ .description }}</p>
+            <p class="project-card-description text-muted">{{ .description }}</p>
             {{- with .tags }}
-              <div class="flex flex-wrap gap-2 mt-5">
+              <div class="project-card-tags flex flex-wrap gap-2 mt-5">
                 {{- range . }}<span class="badge">{{ . }}</span>{{- end }}
               </div>
             {{- end }}
-            <div class="project-card-actions">
-              <a href="{{ .slug | relURL }}" class="btn btn-primary project-detail-button">자세히 보기 <span aria-hidden="true">&rarr;</span></a>
-              {{- with .notion }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="project-external-link">Notion <span class="sr-only">새 창</span></a>{{- end }}
-              {{- with .github }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="project-external-link">GitHub <span class="sr-only">새 창</span></a>{{- end }}
+            <div class="project-card-footer">
+              <span>세부 페이지 보기</span>
+              <span class="project-card-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </div>
-        </article>
+        </a>
       {{- end }}
     </div>
   </div>
