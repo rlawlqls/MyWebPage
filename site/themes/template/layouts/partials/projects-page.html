@@ -12,20 +12,20 @@
       {{- range .Site.Data.projects }}
         <a href="{{ .slug | relURL }}" class="project-card card" aria-label="{{ .title }} 세부 페이지 보기">
           <div class="project-card-content">
-            <div class="flex items-center justify-between gap-4 mb-3" style="flex-wrap: wrap;">
-              <p class="text-primary font-bold uppercase tracking-widest" style="font-size: 0.625rem;">{{ .program }}</p>
-              <p class="text-xs text-muted">{{ .period }}</p>
+            <div class="project-card-header">
+              <p class="project-card-program">{{ .program }}</p>
+              <time class="project-card-period">{{ .period }}</time>
             </div>
-            <h3 class="font-display font-bold mb-2" style="font-size: 1.35rem;">{{ .title }}</h3>
-            <p class="font-semibold mb-3" style="font-size: 0.9375rem;">{{ .subtitle }}</p>
+            <h3 class="project-card-title">{{ .title }}</h3>
+            <p class="project-card-subtitle">{{ .subtitle }}</p>
             <p class="project-card-description text-muted">{{ .description }}</p>
             {{- with .tags }}
-              <div class="project-card-tags flex flex-wrap gap-2 mt-5">
+              <div class="project-card-tags">
                 {{- range . }}<span class="badge">{{ . }}</span>{{- end }}
               </div>
             {{- end }}
             <div class="project-card-footer">
-              <span>세부 페이지 보기</span>
+              <span>프로젝트 보기</span>
               <span class="project-card-arrow" aria-hidden="true">&rarr;</span>
             </div>
           </div>
