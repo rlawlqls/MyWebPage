@@ -6,7 +6,7 @@
         학력
       </h2>
       <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-        {{ range .Site.Data.education }}
+        {{ range sort hugo.Data.education "sortDate" "desc" }}
           <article class="card p-6 border-l-4" style="border-left: 4px solid hsl(var(--primary));">
             <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 0.75rem;">
               <div>
@@ -25,10 +25,10 @@
           <span class="section-bar"></span>
           교육과 활동
         </h2>
-        <p class="text-muted" style="line-height: 1.8;">교육, 멘토링, 동아리와 봉사 경험을 시작 시점부터 시간순으로 정리했습니다.</p>
+        <p class="text-muted" style="line-height: 1.8;">교육, 멘토링, 동아리와 봉사 경험을 최근 활동부터 정리했습니다.</p>
       </div>
-      <ol class="activity-timeline" aria-label="교육과 활동 시간순 목록">
-        {{ range .Site.Data.experience }}
+      <ol class="activity-timeline" aria-label="교육과 활동 최근순 목록">
+        {{ range sort hugo.Data.experience "sortOrder" "desc" }}
           <li class="activity-timeline-item">
             <div class="activity-timeline-marker" aria-hidden="true"></div>
             <article class="card activity-card">
