@@ -1284,8 +1284,8 @@ a.hero-social-link:hover {
     gap: 0.65rem;
   }
   .hero-photo {
-    width: 7.75rem;
-    height: 7.75rem;
+    width: clamp(7.75rem, 23svh, 10rem);
+    height: clamp(7.75rem, 23svh, 10rem);
   }
   .hero-photo img {
     border-width: 3px;
@@ -1365,6 +1365,15 @@ a.hero-social-link:hover {
   }
   .interest-card {
     min-height: auto;
+  }
+}
+
+/* Keep the complete introduction visible on short mobile viewports (for
+   example, a 390 x 644 device) without making the portrait tiny on taller
+   phones. */
+@media (max-width: 639px) and (max-height: 700px) {
+  .hero {
+    align-items: flex-start;
   }
 }
 
