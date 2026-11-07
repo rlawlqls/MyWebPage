@@ -88,7 +88,6 @@ hugo --gc --minify --config hugo.toml,pages.json --theme template --themesDir th
 - 테마 라이선스 전문: [LICENSE](LICENSE)
 - 글, 자기소개, 학습 계획, 활동 및 프로젝트 설명: 김지빈 작성
 - 개인·활동 사진과 프로젝트 화면: 김지빈 제공 자료
-- 잔나비 콘서트 사진: [한국경제 기사](https://www.hankyung.com/article/202512290090H) 출처 표기 후 교육용 포트폴리오에서 사용
 - 웹 글꼴: [Google Fonts Noto Sans KR](https://fonts.google.com/noto/specimen/Noto+Sans+KR), SIL Open Font License
 
 생성형 AI는 일부 HTML·CSS·JavaScript 수정안 작성과 접근성·반응형 검토를 보조했습니다. 공개할 내용의 선택, 개인 경험 서술, 최종 코드 반영 및 동작 검증은 작성자가 직접 수행했습니다. 외부 자료는 각 출처와 이용 조건을 따릅니다.
