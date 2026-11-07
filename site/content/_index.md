@@ -1,7 +1,7 @@
 ---
-title: "Jane Doe — Software Engineer"
+title: "김지빈 — AI 개발자"
+description: "사람의 일상에 필요한 문제를 AI와 소프트웨어로 해결합니다."
 ---
 
-Hi, I'm Jane. This is the About section, and it is rendered from the body of
-`content/_index.md`. Replace this text with a short introduction about yourself,
-what you do, and what you care about.
+안녕하세요. 전북대학교 컴퓨터인공지능학부에 재학 중인 김지빈입니다.
+인공지능을 실제 서비스와 하드웨어에 연결하여 사용자에게 도움이 되는 결과물을 만드는 과정에 관심이 있습니다.
