@@ -1,15 +1,15 @@
 baseURL = 'https://example.org/'
 languageCode = 'ko-kr'
-title = '김지빈 — AI 개발자'
+title = '김지빈 — 사람을 위한 AI 개발자'
 
 
 [params]
   navName = "rlawlqls"
   firstName = "김지빈"
   lastName = ""
-  tagline = "AI 개발자"
+  tagline = "사람의 일상과 기술을 연결하는 AI 개발자"
   affiliation = "전북대학교 컴퓨터인공지능학부 재학"
-  interests = ["인공지능", "금융IT", "로봇틱스"]
+  interests = ["인공지능", "사용자 중심 서비스", "Physical AI"]
   email = "jibean77@jbnu.ac.kr"
   github = "https://github.com/rlawlqls"
   linkedin = "https://www.jbnu.ac.kr/web/index.do"
@@ -22,7 +22,7 @@ title = '김지빈 — AI 개발자'
   favicon = "/favicon.svg"
   ogImage = "/opengraph.jpg"
   resumeFile = ""
-  description = "AI 개발자 김지빈의 포트폴리오입니다."
+  description = "사람의 일상에 필요한 문제를 AI와 소프트웨어로 해결하는 개발자 김지빈의 포트폴리오입니다."
 
 disableKinds = ['taxonomy', 'term']
 
