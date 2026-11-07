@@ -5,8 +5,6 @@
   program: "제3회 호남권 SW창업 아이디어 경진대회"
   description: "접근 가능한 장소와 이동 정보를 고려해 교통약자와 가족이 함께 지역 여행을 계획하도록 돕는 서비스입니다."
   tags: ["Service Planning", "Accessibility", "Travel"]
-  image: "images/project-bodeumgil.png"
-  image_alt: "보듬길 서비스의 모바일 화면과 소개 문구가 포함된 발표 표지"
 
 - title: "채움"
   slug: "project-chaeum/"
@@ -15,8 +13,6 @@
   program: "오픈소스 SW 아이디어 해커톤 캠프"
   description: "지역의 유휴 공간 정보를 분석해 창업 아이디어와 연결하는 AI 서비스 흐름을 제안했습니다."
   tags: ["AI Service", "Open Source", "Local Problem"]
-  image: "images/project-chaeum.png"
-  image_alt: "전북의 빈 공간을 창업 기회로 전환하는 채움 프로젝트 발표 표지"
 
 - title: "Speech Bridge"
   slug: "project-speech-bridge/"
@@ -27,8 +23,6 @@
   tags: ["Machine Learning", "Arduino", "Web", "Physical AI"]
   github: "https://github.com/rlawlqls/JUCSY"
   notion: "https://app.notion.com/p/FTD-Speech-Bridge-6fb6dabf955b820e95580174d71e8e44"
-  image: "images/project-speech-bridge.png"
-  image_alt: "Speech Bridge의 문장 복원 인터페이스와 시스템 실행 화면"
 
 - title: "Market Mate AI"
   slug: "project-market-mate/"
@@ -39,8 +33,6 @@
   tags: ["Google Cloud Vision", "Gemini API", "Web", "MVP"]
   github: "https://github.com/rlawlqls/2026_kimchiandburger.git"
   notion: "https://app.notion.com/p/Market-Mate-Ai-3-5d06dabf955b827cb008813939e9e658"
-  image: "images/project-market-mate.png"
-  image_alt: "Market Mate AI의 메뉴판 스캔과 주문 표현 안내 화면"
 
 - title: "ALPS · JBNUPC"
   slug: "project-alps-jbnupc/"
@@ -49,8 +41,6 @@
   program: "전북대학교 컴퓨터인공지능학부 과동아리 ALPS"
   description: "부원, C언어 멘토, 부회장으로 활동하며 학습과 동아리 운영, JBNUPC 프로그래밍 경진대회 운영에 참여했습니다."
   tags: ["C", "Mentoring", "Leadership", "Algorithm"]
-  image: "images/activity-jbnupc.png"
-  image_alt: "2026 전북대학교 프로그래밍 경진대회 JBNUPC 포스터"
 
 - title: "Dear Grandma"
   slug: "project-dear-grandma/"
@@ -60,18 +50,14 @@
   description: "HolySoft 인턴십에서 팀을 구성해 요리 시뮬레이션 게임을 만들고 현지 회사 직원에게 시연했습니다."
   tags: ["Unity", "C#", "Game Development", "Team Project"]
   github: "https://github.com/rlawlqls/2026_DearGrandma.git"
-  image: "images/project-dear-grandma.png"
-  image_alt: "필리핀 HolySoft에서 Dear Grandma 게임을 시연하는 모습"
 
 - title: "SW 교육봉사단 J-Edu-IT"
   slug: "project-sw-education/"
   subtitle: "배운 소프트웨어 지식을 학습자의 눈높이에서 나눈 교육봉사"
   period: "2025.06 - 2025.07"
   program: "전북대학교 SW 교육봉사단 3기"
-  description: "팀원과 수업 순서와 역할을 나누고, 소프트웨어 개념과 실습 과정을 이해하기 쉽게 설명했습니다."
+  description: "무주 지역 초등학생 19명과 블루투스 자동차를 조립하고 코딩·앱 연결·게임을 진행한 IoT 교육봉사입니다."
   tags: ["Education", "Volunteering", "Communication"]
-  image: "images/project-sw-education.jpg"
-  image_alt: "교육 실습에서 제작한 센서와 모터 기반 자동차"
 
 - title: "스마트 모빌리티 웹 프로젝트"
   slug: "project-smart-mobility/"
@@ -80,5 +66,3 @@
   program: "스마트 모빌리티 전문가 양성과정"
   description: "HTML, CSS, JavaScript의 기초를 배우고 제주도 이동 정보를 보여 주는 내비게이션 웹 프로젝트를 진행했습니다."
   tags: ["HTML", "CSS", "JavaScript", "Mobility"]
-  image: "images/project-smart-mobility.jpg"
-  image_alt: "스마트 모빌리티 교육에서 자동차와 센서 기반 모형을 실습하는 모습"
