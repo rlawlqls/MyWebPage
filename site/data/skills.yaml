@@ -6,6 +6,12 @@
       explanation: "Dear Grandma 요리 게임의 메뉴, 장면 연결, 스토리 장면과 요리 단계 기능을 구현했습니다."
     - name: "C"
       explanation: "ALPS 동아리에서 C언어 멘토로 활동하며 기초 문법과 문제 해결 과정을 설명했습니다."
+    - name: "C++"
+      explanation: "알고리즘 문제 해결에 활용하고 있습니다."
+    - name: "Python"
+      explanation: "인공지능 특화교육과 데이터·AI 실습에 활용하고 있습니다."
+    - name: "React"
+      explanation: "컴포넌트 기반 웹 화면 구현을 학습하고 있습니다."
     - name: "Git · GitHub"
       explanation: "팀 프로젝트의 버전 관리와 기능 통합, 개인 프로젝트의 개발 기록에 사용합니다."
 
