@@ -519,7 +519,7 @@ button {
   display: block;
 }
 
-/* Compact skills overview */
+/* Portfolio-style skills overview */
 .skills-compact-section {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
@@ -527,51 +527,40 @@ button {
 .skills-compact-section .section-header {
   margin-bottom: 1.25rem;
 }
-.skills-compact-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(12rem, 1fr);
-  gap: 2rem;
-  align-items: start;
-}
-.skills-category-list {
+.skills-portfolio-list {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  border-top: 1px solid hsl(var(--border));
 }
-.skills-category-title {
-  margin: 0 0 0.4rem;
-  color: hsl(var(--muted-foreground));
-  font-size: 0.65rem;
+.skills-portfolio-row {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  align-items: start;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid hsl(var(--border));
+}
+.skills-portfolio-row h3 {
+  margin: 0;
+  color: hsl(var(--foreground));
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: -0.02em;
 }
-.skills-pill-list,
-.language-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-.skills-compact-section .skill-pill {
-  padding: 0.25rem 0.55rem;
-  font-size: 0.7rem;
-}
-.skills-compact-section .skill-explanation {
-  margin-top: 0.4rem;
-  padding: 0.55rem 0.65rem;
-  line-height: 1.5;
-}
-.language-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.55rem;
-  border: 1px solid hsl(var(--border));
-  border-radius: 9999px;
-  background-color: hsl(var(--background));
-  font-size: 0.7rem;
-}
-.language-chip span {
+.skills-text-list {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
   color: hsl(var(--muted-foreground));
+  font-size: 0.82rem;
+  line-height: 1.6;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+.language-text-list strong {
+  color: hsl(var(--foreground));
 }
 
 /* Timeline */
@@ -993,13 +982,6 @@ button {
   font-size: 0.9375rem;
   font-weight: 500;
 }
-.hero-affiliation-dot {
-  width: 0.375rem;
-  height: 0.375rem;
-  border-radius: 9999px;
-  background-color: hsl(var(--primary) / 0.65);
-  flex-shrink: 0;
-}
 .hero-interests {
   display: flex;
   flex-direction: row;
@@ -1288,6 +1270,45 @@ a.hero-social-link:hover {
 }
 
 @media (max-width: 639px) {
+  :root {
+    --nav-height: 64px;
+  }
+  .hero {
+    display: flex;
+    min-height: 100svh;
+    align-items: center;
+    padding-top: calc(var(--nav-height) + 0.6rem);
+    padding-bottom: 0.65rem;
+  }
+  .hero-content {
+    gap: 0.65rem;
+  }
+  .hero-photo {
+    width: 7.75rem;
+    height: 7.75rem;
+  }
+  .hero-photo img {
+    border-width: 3px;
+    box-shadow: 0 16px 32px -18px rgba(0,0,0,0.35);
+  }
+  .hero-photo::before {
+    filter: blur(28px);
+  }
+  .hero-intro {
+    width: 100%;
+  }
+  .hero-name {
+    margin-bottom: 0.25rem !important;
+    line-height: 1.05;
+  }
+  .hero-name span {
+    font-size: 2.05rem !important;
+  }
+  .hero-tagline {
+    margin-bottom: 0.45rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4;
+  }
   .detail-hero {
     padding-top: 7.5rem !important;
     padding-bottom: 3rem !important;
@@ -1297,14 +1318,41 @@ a.hero-social-link:hover {
     padding: 1.5rem !important;
   }
   .hero-affiliation {
-    font-size: 0.8125rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.77rem;
   }
   .hero-interests {
-    gap: 0.375rem;
+    gap: 0.3rem;
   }
   .hero-interest-tag {
-    padding: 0.3125rem 0.5rem;
-    font-size: 0.75rem;
+    padding: 0.22rem 0.42rem;
+    font-size: 0.66rem;
+  }
+  .hero-actions {
+    margin-top: 0.6rem;
+  }
+  .hero-actions > div {
+    gap: 0.45rem;
+  }
+  .hero-actions .btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.72rem;
+  }
+  .hero-actions .icon-md {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  .hero .hero-socials {
+    gap: 0.38rem;
+    margin-top: 0.6rem !important;
+  }
+  .hero-social-link {
+    width: 2rem;
+    height: 2rem;
+  }
+  .hero-social-link .icon-md {
+    width: 1rem;
+    height: 1rem;
   }
   .page-navigation .btn {
     width: 100%;
@@ -1633,12 +1681,16 @@ a.hero-social-link:hover {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
-  .skills-compact-layout {
-    grid-template-columns: 1fr;
-    gap: 0.9rem;
+  .skills-compact-section .section-header {
+    margin-bottom: 0.8rem;
   }
-  .skills-category-list {
-    gap: 0.65rem;
+  .skills-portfolio-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+    padding: 0.8rem 0;
+  }
+  .skills-text-list {
+    font-size: 0.78rem;
   }
   .project-card,
   .activity-card {

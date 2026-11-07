@@ -5,35 +5,21 @@
         <span class="section-bar"></span>
         기술과 언어
       </h2>
-      <div class="skills-compact-layout">
-        <div class="skills-category-list">
-          {{ range .Site.Data.skills }}
-          <div data-skill-category="{{ .category }}">
-            <p class="skills-category-title">{{ .category }}</p>
-            <div class="skills-pill-list">
-              {{ range .items }}
-              <button type="button"
-                class="skill-pill"
-                data-skill-name="{{ .name }}"
-                data-skill-explanation="{{ .explanation }}"
-                aria-expanded="false">
-                {{ .name }}
-              </button>
-              {{ end }}
-            </div>
-            <div class="skill-explanation" data-skill-explanation-box aria-live="polite"></div>
-          </div>
-          {{ end }}
-        </div>
-
-        <div>
-          <p class="skills-category-title">언어</p>
-          <div class="language-list" aria-label="언어 능력">
-            {{ range .Site.Data.languages }}
-              <span class="language-chip"><strong>{{ .name }}</strong><span>{{ .level }}</span></span>
-            {{ end }}
-          </div>
-        </div>
+      <div class="skills-portfolio-list">
+        {{ range .Site.Data.skills }}
+          <section class="skills-portfolio-row" aria-labelledby="skill-{{ .category | urlize }}">
+            <h3 id="skill-{{ .category | urlize }}">{{ .category }}</h3>
+            <p class="skills-text-list">
+              {{ range $index, $item := .items }}{{ if $index }} · {{ end }}{{ $item.name }}{{ end }}
+            </p>
+          </section>
+        {{ end }}
+        <section class="skills-portfolio-row" aria-labelledby="language-heading">
+          <h3 id="language-heading">언어</h3>
+          <p class="skills-text-list language-text-list">
+            {{ range $index, $language := .Site.Data.languages }}{{ if $index }} · {{ end }}<strong>{{ $language.name }}</strong> {{ $language.level }}{{ end }}
+          </p>
+        </section>
       </div>
     </div>
   </div>

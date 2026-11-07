@@ -8,7 +8,7 @@
   <div class="container" style="max-width: 80rem;">
     <div class="hero-content">
       <!-- Text -->
-      <div class="fade-in flex-1" style="text-align: center;">
+      <div class="fade-in flex-1 hero-intro" style="text-align: center;">
         {{- with .Site.Params.location }}
           <div class="location-tag mb-6">
             <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -16,17 +16,16 @@
           </div>
         {{- end }}
 
-        <h1 style="font-size: clamp(2.25rem, 5vw, 4.5rem); font-weight: 700; margin-bottom: 1.5rem;">
+        <h1 class="hero-name" style="font-size: clamp(2.25rem, 5vw, 4.5rem); font-weight: 700; margin-bottom: 1.5rem;">
           <span class="text-primary" style="font-size: clamp(2.5rem, 5.5vw, 4.375rem);">{{ .Site.Params.firstName }}</span>
         </h1>
 
-        <p class="text-muted" style="font-size: clamp(1.125rem, 2vw, 1.375rem); font-weight: 300; margin-bottom: 1.25rem; max-width: 42rem; margin-left: auto; margin-right: auto;">
+        <p class="text-muted hero-tagline" style="font-size: clamp(1.125rem, 2vw, 1.375rem); font-weight: 300; margin-bottom: 1.25rem; max-width: 42rem; margin-left: auto; margin-right: auto;">
           {{ .Site.Params.tagline }}
         </p>
 
         {{- with .Site.Params.affiliation }}
           <p class="hero-affiliation">
-            <span class="hero-affiliation-dot" aria-hidden="true"></span>
             {{ . }}
           </p>
         {{- end }}
