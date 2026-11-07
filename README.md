@@ -1,5 +1,42 @@
 # kiyomi-portfolio
 
+## 김지빈 포트폴리오 실행 및 배포
+
+이 저장소의 실제 포트폴리오 소스는 `site/`에 있습니다. Hugo Extended 0.128.0 이상이 필요합니다.
+
+로컬 미리보기:
+
+```powershell
+cd site
+hugo server --config hugo.toml,pages.json --theme template --themesDir themes
+```
+
+배포 결과물 빌드:
+
+```powershell
+cd site
+hugo --config hugo.toml,pages.json --theme template --themesDir themes --destination ../public
+```
+
+내용을 수정한 뒤 변경 파일을 확인하고 `main` 브랜치에 커밋·푸시하면 `.github/workflows/hugo-pages.yml`이 자동으로 빌드와 GitHub Pages 배포를 실행합니다. GitHub 저장소의 **Actions** 탭에서 실행 결과를, **Settings → Pages**에서 공개 주소를 확인할 수 있습니다.
+
+주요 수정 위치:
+
+- 페이지 글: `site/content/`
+- 프로젝트·기술·수상·활동 데이터: `site/data/`
+- 메뉴와 페이지 구성: `site/themes/template/layouts/`
+- 스타일: `site/themes/template/assets/css/main.css`
+- 이미지: `site/static/images/`
+
+### 출처와 이용 조건
+
+- 원본 테마: [kiyomi-portfolio](https://github.com/mathscantor/hugo-theme-kiyomi-portfolio), MIT License
+- 테마 라이선스 전문: [LICENSE](LICENSE)
+- 개인 사진과 프로젝트 자료: 김지빈 제공 자료
+- 잔나비 콘서트 사진: [한국경제 기사](https://www.hankyung.com/article/202512290090H)에서 출처를 밝히고 교육용 포트폴리오에 참조
+
+사이트의 개인 글과 프로젝트 설명은 포트폴리오 작성자가 직접 구성한 내용이며, 외부 자료는 해당 링크와 이용 조건을 따릅니다.
+
 A single-page [Hugo](https://gohugo.io) portfolio theme with an animated hero,
 experience timeline, clickable skills, presentations, education/certifications,
 awards, and a floating contact button. Content is driven entirely by simple
